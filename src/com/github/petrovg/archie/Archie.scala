@@ -38,9 +38,7 @@ object Archiebald {
 		println(ukLocations.leafDescendantsOf("London"))
 		println(ukLocations.leafDescendantsOf("Berkshire"))
 		println(ukLocations.leafDescendantsOf("Blabla"))
-
-
-		
+		println(ukLocations.root())
 		
 	}
 }
@@ -68,6 +66,7 @@ case class Hierarchy[T](private val links:Set[(T,T)]) {
 	
 	def leafDescendantsOf(ancestor:T) = leavesOnly.filter(isDescendant(_,ancestor))
 	
+	def root() = parentToChild.keySet -- childToParent.keySet
 }
 
 package object impl {
