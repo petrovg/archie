@@ -1,0 +1,5 @@
+Archie is only here for a demonstration of how to represent a hierarchical structure without using the annoying parentNodeId anti-pattern.
+
+Holding a reference to a parent in the object at a cerain hierarchy node is a blatant violation of the single responsibility principle. The hierarchical structure should be orthogonal to the objects being stored in it and the object stored in it must be able to exist on their own, as well as in the hierarchy. Therefore having the actual businees object hold a reference to its parent or chidren in the hierarchy must be avoided at all costs.
+
+This minimal hierarchy class implementation with a runnable micro-test shows how.
